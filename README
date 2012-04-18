@@ -1,0 +1,13 @@
+ Module: pam
+
+ Manages /etc/security/access.conf
+
+ Sample Usage:
+
+    pam::access {
+      "ALL":
+        permission  => "-",
+        entity      => "root",
+        origin      => "ALL",
+        priority    => "10";
+    }
