@@ -7,7 +7,7 @@
     pam::access {
       "ALL":
         permission  => "-",
-        entity      => "root",
+        entity      => "ALL",
         origin      => "ALL",
-        priority    => "10";
+        priority    => "50";
     }
