@@ -1,10 +1,15 @@
- Module: pam
+ Module: PAM
 
- Manages /etc/security/access.conf
+ Manages: /etc/security/access.conf
 
  Sample Usage:
 
     pam::access {
+      "root":
+        permission  => "+",
+        entity      => "root",
+        origin      => "ALL",
+        priority    => "10";
       "ALL":
         permission  => "-",
         entity      => "ALL",
