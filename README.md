@@ -1,8 +1,9 @@
- Module: PAM
+# PAM module for Puppet
 
- Manages: /etc/security/access.conf
+## Description
+Puppet module for managing /etc/security/access.conf
 
- Sample Usage:
+## Usage
 
     pam::access {
       "root":
