@@ -2,8 +2,9 @@
 
 ## Description
 Puppet module for managing /etc/security/access.conf
+and /etc/security/limits.conf
 
-## Usage
+### Example usage for managing access.conf
 
     pam::access {
       "root":
@@ -15,5 +16,25 @@ Puppet module for managing /etc/security/access.conf
         permission  => "-",
         entity      => "ALL",
         origin      => "ALL",
-        priority    => "50";
+        priority    => "20";
     }
+
+### Example usage for managing limits.conf
+
+    pam::limits {
+      "nofile_hard":
+         ensure   => present,
+         domain   => "*",
+         type     => "hard",
+         item     => "nofile",
+         value    => "8192",
+         priority => 10;
+      "nofile_soft":
+         ensure   => present,
+         domain   => "*",
+         type     => "soft",
+         item     => "nofile",
+         value    => "1024",
+         priority => 20;
+      }
+
